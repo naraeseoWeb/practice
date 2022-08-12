@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import MyComponents from "./pages/MyComponents.js";
+import Counter from "./Counter.js";
+import Say from "./Say";
+import Dropdown from "./pages/Dropdown.jsx";
 
-function App() {
+
+const App = () => {
+  const name = 'React';
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header className="react">
+        <div>
+          {name}
+        </div>
+      </Header>
+      <Div>
+        <MyComponents name={"react"}>자식</MyComponents>
+        <Counter />
+      </Div>
+      <Div>
+        <Say></Say>
+      </Div>
+      <Div>
+      </Div>
+      <Space>
+        <Dropdown />
+      </Space>
+    </>
+  )
+  
+
 }
 
+const Header = styled.header`
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  height: 100px;
+  width: 100%;
+  background-color: black;
+  font-weight: 700;
+  color: white;
+  font-size: 20px;
+`
+const Div = styled.div`
+  display: none;
+  line-height: 40px; 
+  font-weight: 700;
+  padding-left: 30px; 
+`
+
+const Space = styled.div`
+  padding: 20px;
+`
 export default App;
