@@ -3,17 +3,16 @@ import MyComponents from "./pages/MyComponents.js";
 import Counter from "./Counter.js";
 import Say from "./Say";
 import Dropdown from "./pages/Dropdown.jsx";
-
+import DropdownP from "./pages/DropdownP.jsx";
+import DropdownF from "./pages/DropdownF.jsx";
 
 const App = () => {
-  const name = 'React';
+  const name = "React";
 
   return (
     <>
       <Header className="react">
-        <div>
-          {name}
-        </div>
+        <div>{name}</div>
       </Header>
       <Div>
         <MyComponents name={"react"}>자식</MyComponents>
@@ -22,16 +21,19 @@ const App = () => {
       <Div>
         <Say></Say>
       </Div>
-      <Div>
-      </Div>
+      <Div></Div>
       <Space>
         <Dropdown />
       </Space>
+      <Space>
+        <DropdownP />
+      </Space>
+      <Space>
+        <DropdownF />
+      </Space>
     </>
-  )
-  
-
-}
+  );
+};
 
 const Header = styled.header`
   display: flex;
@@ -43,15 +45,15 @@ const Header = styled.header`
   font-weight: 700;
   color: white;
   font-size: 20px;
-`
+`;
 const Div = styled.div`
   display: none;
-  line-height: 40px; 
+  line-height: 40px;
   font-weight: 700;
-  padding-left: 30px; 
-`
+  padding-left: 30px;
+`;
 
 const Space = styled.div`
   padding: 20px;
-`
+`;
 export default App;
